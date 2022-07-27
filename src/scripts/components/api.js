@@ -9,5 +9,5 @@ const url = 'src/data/photographers.json'
 const getPhotographers = () => axios.get(url).then(response => response.data.photographers)
 
 module.exports = {
-    getPhotographers
+  getPhotographers
 }

@@ -3,7 +3,7 @@ module.exports = {
     const { name, portrait, id, city, country } = data
 
     const picture = `/src/assets/photographers/${portrait}`
-    const url = `./scripts/pages/photographer/?id=${id}`
+    const url = `photographer.html?id=${id}`
 
     const getUserCardDOM = () => {
       const article = document.createElement('article')
