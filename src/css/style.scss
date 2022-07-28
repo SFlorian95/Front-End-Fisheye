@@ -41,15 +41,38 @@ h1 {
 
 .photographer_section article a {
     text-decoration: none;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.photographer_section article div.localisation {
+    display: inline-block;
+
+    span {
+        color: #901C1C;
+    }
+}
+
+span {
+    margin-top: 4px;
+}
+
+.photographer_section article span.tagline {
+    font-size: 12px;
+}
+
+.photographer_section article span.price {
+    font-size: 12px;
+    color: grey;
+}
+
 .photographer_section article h2 {
     color: #D3573C;
     font-size: 36px;
+    margin-bottom: 1%;
 }
 
 .photographer_section article img {

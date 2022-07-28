@@ -1,6 +1,6 @@
 module.exports = {
   create (data) {
-    const { name, portrait, id, city, country } = data
+    const { name, portrait, id, city, country, tagline, price } = data
 
     const picture = `/src/assets/photographers/${portrait}`
     const url = `photographer.html?id=${id}`
@@ -11,11 +11,22 @@ module.exports = {
       const a = document.createElement('a')
       a.setAttribute('href', url)
 
+      const div = document.createElement('div')
+      div.classList.add('localisation')
+
       const cityText = document.createElement('span')
-      cityText.textContent = city
+      cityText.textContent = city + ', '
 
       const countryText = document.createElement('span')
       countryText.textContent = country
+
+      const taglineText = document.createElement('span')
+      taglineText.textContent = tagline
+      taglineText.classList.add('tagline')
+
+      const priceNumber = document.createElement('span')
+      priceNumber.textContent = price + '€/jour'
+      priceNumber.classList.add('price')
 
       const img = document.createElement('img')
       img.setAttribute('src', picture)
@@ -24,8 +35,11 @@ module.exports = {
       h2.textContent = name
 
       article.appendChild(a)
-      article.appendChild(cityText)
-      article.appendChild(countryText)
+      article.appendChild(div)
+      article.appendChild(taglineText)
+      article.appendChild(priceNumber)
+      div.appendChild(cityText)
+      div.appendChild(countryText)
       a.appendChild(img)
       a.appendChild(h2)
       return (article)
