@@ -7,7 +7,7 @@ const id = url.searchParams.get('id')
 
 // if page photographer.html is loaded and a param id exists from url
 if (id !== null) {
-  console.log('id:', id)
+  // console.log('id:', id)
   require('./scripts/pages/photographer')(id)
 } else {
   // By default load home page
