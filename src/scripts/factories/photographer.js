@@ -45,6 +45,56 @@ module.exports = {
       return (article)
     }
 
-    return { name, picture, getUserCardDOM }
+    const getPhotographerProfile = () => {
+      const photographersHeader = document.querySelector('.photograph-header')
+
+      const info = document.createElement('div')
+      info.classList.add('info')
+
+      const img = document.createElement('img')
+      img.setAttribute('src', picture)
+
+      const h2 = document.createElement('h2')
+      h2.textContent = name
+
+      const localisation = document.createElement('div')
+      localisation.classList.add('localisation')
+      const cityText = document.createElement('span')
+      cityText.textContent = city + ', '
+      const countryText = document.createElement('span')
+      countryText.textContent = country
+
+      const taglineText = document.createElement('span')
+      taglineText.textContent = tagline
+      taglineText.classList.add('tagline')
+
+      /** Ajout des élements dans le html */
+
+      photographersHeader.appendChild(info)
+      photographersHeader.appendChild(img)
+      info.appendChild(h2)
+      info.appendChild(localisation)
+      info.appendChild(taglineText)
+      localisation.appendChild(cityText)
+      localisation.appendChild(countryText)
+
+      return (photographersHeader)
+    }
+
+    return { name, picture, getUserCardDOM, getPhotographerProfile }
+  }
+
+  createMedia (data) {
+    const {title, image} = data
+
+    const picture = `/src/assets/photographers/${image}`
+
+    const getMediaCardDom = () => {
+      const div = document.createElement('div')
+
+      return(div)
+    }
+
+    return {title, picture}
   }
 }
