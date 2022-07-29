@@ -84,17 +84,4 @@ module.exports = {
     return { name, picture, getUserCardDOM, getPhotographerProfile }
   }
 
-  createMedia (data) {
-    const {title, image} = data
-
-    const picture = `/src/assets/photographers/${image}`
-
-    const getMediaCardDom = () => {
-      const div = document.createElement('div')
-
-      return(div)
-    }
-
-    return {title, picture}
-  }
 }

@@ -15,46 +15,51 @@
       <div class="photograph-header">
         <button class="contact_button">Contactez-moi</button>
       </div>
+      <section id="medias"></section>
     </main>
-    <div id="contact_modal">
+    <div id="contact_modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
-          <img src="../assets/icons/close.svg" class="close"/>
+          <h1 id="modal-title">Contactez-moi</h1>
+          <img src="../assets/icons/close.svg" class="close" aria-label="Close Contact form" alt="Close Contact form"/>
         </header>
-				<form>
+				<form id="form-contact">
 					<div>
-						<label for="firstname">Prénom</label>
+						<label id="label-firstname" for="firstname">Prénom</label>
 						<input 
             id="firstname"
             name="firstname"
             type="text"
+            aria-labelledby="label-firstname"
             />
           <div>
-              <label for="lastname">Nom</label>
+              <label id="label-lastname" for="lastname">Nom</label>
               <input 
               id="lastname"
               name="lastname"
               type="text"
+              aria-labelledby="label-lastname"
               />
 					</div>
           <div>
-            <label for="email">Email</label>
+            <label id="label-email" for="email">Email</label>
             <input 
             id="email"
             name="email"
             type="email"
+            aria-labelledby="label-email"
             />
           </div>
           <div>
-            <label for="yourMessage">Message</label>
-            <input 
+            <label id="label-yourMessage" for="yourMessage">Message</label>
+            <textarea 
             id="yourMessage"
             name="yourMessage"
             type="text"
-            />
+            aria-labelledby="label-yourMessage"
+            ></textarea>
           </div>
-          <button class="contact_button" type="submit">Envoyer</button>
+          <button class="contact_button" aria-label="send" type="submit">Envoyer</button>
 				</form>
 			</div>
 		</div>

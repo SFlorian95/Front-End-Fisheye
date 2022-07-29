@@ -20,11 +20,10 @@ const getPhotographerById = id => getPhotographers().then(photographers => photo
  * Get all medias
  * @returns Array of medias object
  */
-const getMediasById = id => axios.get(url).then(res => res.data.media.filter(result => result.photographerId === id))
-console.log(getMediasById(243))
+const getMediasByPhotographerId = id => axios.get(url).then(res => res.data.media.filter(result => result.photographerId === id))
 
 module.exports = {
   getPhotographers,
   getPhotographerById,
-  getMediasById
+  getMediasByPhotographerId
 }

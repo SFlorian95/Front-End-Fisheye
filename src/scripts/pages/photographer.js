@@ -1,4 +1,5 @@
 const factoryPhotographer = require('../factories/photographer')
+const factoryMedia = require('../factories/media')
 const api = require('../components/api')
 const contactForm = require('../utils/contactForm')
 
@@ -10,13 +11,26 @@ module.exports = id => {
     return userCardDOM
   }
 
+  const displayMedias = medias => {
+    medias.forEach(media => {
+      const mediaModel = factoryMedia.createCard(media)
+      const mediaCardDOM = mediaModel.getMediaCardDOM()
+      document.getElementById('medias').appendChild(mediaCardDOM)
+    })
+  }
+
   const init = async () => {
-    const data = await api.getPhotographerById(parseInt(id))
-    console.log(data)
-    displayData(data)
+    const photographer = await api.getPhotographerById(parseInt(id))
+    const medias = await api.getMediasByPhotographerId(parseInt(id))
+
+    // console.log(await api.getMediasByPhotographerId(243))
+    console.log(photographer)
+    displayData(photographer)
+    displayMedias(medias)
+
+    document.querySelector('.contact_button').addEventListener('click', () => contactForm.displayModal(photographer.name))
+    document.querySelector('.close').addEventListener('click', contactForm.closeModal)
+    document.getElementById('form-contact').addEventListener('submit', e => contactForm.formSubmit(e))
   }
   init()
 }
-
-document.querySelector('.contact_button').addEventListener('click', contactForm.displayModal)
-document.querySelector('.close').addEventListener('click', contactForm.closeModal)
