@@ -33,4 +33,4 @@ module.exports = id => {
     document.getElementById('form-contact').addEventListener('submit', e => contactForm.formSubmit(e))
   }
   init()
-}
+ }
