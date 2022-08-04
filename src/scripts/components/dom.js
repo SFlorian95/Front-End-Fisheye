@@ -38,7 +38,19 @@ const empty = el => {
   }
 }
 
+const displayLightbox = id => {
+  const modal = document.getElementById('lightbox')
+  modal.style.display = 'block'
+}
+
+const closeLightbox = () => {
+  const modal = document.getElementById('lightbox')
+  modal.style.display = 'none'
+}
+
 module.exports = {
   createElement,
-  empty
+  empty,
+  displayLightbox,
+  closeLightbox
 }
