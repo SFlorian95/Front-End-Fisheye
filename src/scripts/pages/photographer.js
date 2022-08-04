@@ -34,7 +34,7 @@ module.exports = id => {
     document.querySelector('.close').addEventListener('click', contactForm.closeModal)
     document.getElementById('form-contact').addEventListener('submit', e => contactForm.formSubmit(e))
 
-    document.querySelectorAll('.imgGallery').addEventListener('click', () => dom.displayLightbox(id))
+    document.querySelectorAll('.imgGallery').addEventListener('click', () => dom.displayLightbox())
   }
   init()
 }

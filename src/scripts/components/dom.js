@@ -38,7 +38,7 @@ const empty = el => {
   }
 }
 
-const displayLightbox = id => {
+const displayLightbox = () => {
   const modal = document.getElementById('lightbox')
   modal.style.display = 'block'
 }
