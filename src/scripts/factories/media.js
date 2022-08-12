@@ -1,13 +1,16 @@
-const dom = require('../components/dom')
+const dom = require('../utils/dom')
+const imgLikes = '/src/assets/images/like.png'
+const imgLikesAttributes = [
+  { src: imgLikes },
+  { alt: 'likes' }
+]
 
 module.exports = {
   createCard (data) {
     const { id, title, likes, image, video } = data
     const media = `/src/assets/medias/${image || video}`
-    // const media = require(`../../assets/medias/${image || video}`)
-    const imgLikes = '/src/assets/images/like.png'
     const aAttributes = [
-      { href: `lightbox.html?id=${id}` },
+      { href: '#' },
       { 'aria-label': `ouvre la vue lightbox de l'image ${title}` }
     ]
     const imgAttributes = [
@@ -33,17 +36,47 @@ module.exports = {
       { alt: 'likes' }
     ]
 
-    const getMediaCardDOM = () => {
-      const a = dom.createElement('a', null, aAttributes)
-      const article = dom.createElement('article', a)
+    const getArticleDOM = () => {
+      const article = dom.createElement('article', null, [{ id }])
       image ? dom.createElement('img', article, imgAttributes) : dom.createElement('video', article, [...videoAttributes, ...imgAttributes])
       const p = dom.createElement('p', article)
       dom.createElement('span', p, spanTitleAttributes, title)
-      const div = dom.createElement('div', p)
-      dom.createElement('span', div, spanLikesAttributes, likes)
-      dom.createElement('img', div, imgLikesAttributes)
-      return a
+      return { article, p }
     }
-    return { title, media, getMediaCardDOM }
+
+    const getLikesDOM = () => {
+      const likesContainer = dom.createElement('div', null)
+      const likesNumber = dom.createElement('span', likesContainer, spanLikesAttributes, likes)
+      const img = dom.createElement('img', likesContainer, imgLikesAttributes)
+      return { likesContainer, likesNumber, img }
+    }
+
+    const getMediaCardDOM = () => {
+      const a = dom.createElement('a', null, aAttributes)
+      const { article, p } = getArticleDOM()
+      const { likesContainer, likesNumber } = getLikesDOM()
+      p.appendChild(likesContainer)
+      a.appendChild(article)
+      return { a, likesContainer, likesNumber }
+    }
+
+    return { title, media, getMediaCardDOM, getArticleDOM, getLikesDOM }
+  },
+
+  createLikesDOM (price) {
+    const spanPriceAttributes = [
+      { class: 'price' },
+      { 'aria-label': price }
+    ]
+    const spanLikesAttributes = [
+      { class: 'total-likes' },
+      { 'aria-label': 'nombre de total de likes' }
+    ]
+
+    const spanPrice = dom.createElement('span', null, spanPriceAttributes, `${price}€ / jour`)
+    const likesContainer = dom.createElement('div', null)
+    const likesNumber = dom.createElement('span', likesContainer, spanLikesAttributes)
+    dom.createElement('img', likesContainer, imgLikesAttributes)
+    return { spanPrice, likesContainer, likesNumber }
   }
 }

@@ -1,5 +1,5 @@
 /* Inject css */
-require('./css/style.scss')
+import './css/style.scss'
 
 /* Rooter of the app : load js file in function of url */
 const url = new URL(window.location.href)
