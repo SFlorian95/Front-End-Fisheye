@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
   </head>
-  <body>
+  <body id="body">
     <header>
       <a href="./index.html">
-        <img src="../assets/images/logo.png" class="logo" />
+        <img src="/src/assets/images/logo.png" alt='logo' class="logo" />
       </a>
     </header>
     <main id="main">
       <div class="photograph-header">
         <button class="contact_button">Contactez-moi</button>
       </div>
+      <label class="sort" for="sortBy">Trier par
+        <select name="sortBy " id="sortBy"></select>
+      </label>
       <section id="medias"></section>
     </main>
-    <div id="contact_modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div id="contact_modal" class="main-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
 			<div class="modal">
 				<header>
           <h1 id="modal-title">Contactez-moi</h1>
-          <img src="../assets/icons/close.svg" class="close" aria-label="Close Contact form" alt="Close Contact form"/>
+          <img src="/src/assets/icons/close.svg" class="close" aria-label="Close Contact form" alt="Close Contact form"/>
         </header>
 				<form id="form-contact">
 					<div>
@@ -32,6 +35,7 @@
             type="text"
             aria-labelledby="label-firstname"
             />
+          </div>
           <div>
               <label id="label-lastname" for="lastname">Nom</label>
               <input 
@@ -64,61 +68,15 @@
 			</div>
 		</div>
 
-    <div id="lightbox">
-      <ul class="carousel" aria-label="our photo gallery">
-        <li class="carousel-item item-0" aria-hidden="false">
-          <div role="button" class="controls controls-left">
-              <span class="img prev-image">
-                  <i aria-hidden="true" class="fa fa-arrow-circle-left"></i>
-              </span>
-              <p class="sr-only">Previous</p>
-          </div>
-          <div role="button" class="controls controls-right">
-              <span class="img next-image">
-                  <i aria-hidden="true" class="fa fa-arrow-circle-right"></i>
-              </span>
-              <p class="sr-only">Next</p>
-          </div>
-          <div class="caroussel-title">
-              <h2>Item 1</h2>
-          </div>
-        </li>
-        <li class="carousel-item item-1" aria-hidden="true">
-          <div role="button" class="controls controls-left">
-              <span class="img prev-image">
-                  <i aria-hidden="true" class="fa fa-arrow-circle-left"></i>
-              </span>
-              <p class="sr-only">Previous</p>
-          </div>
-          <div role="button" class="controls controls-right">
-              <span class="img next-image">
-                  <i aria-hidden="true" class="fa fa-arrow-circle-right"></i>
-              </span>
-              <p class="sr-only">Next</p>
-          </div>
-          <div class="caroussel-title">
-              <h2>Item 2</h2>
-          </div>
-        </li>
-        <li class="carousel-item item-2" aria-hidden="true">
-          <div role="button" class="controls controls-left">
-              <span class="img prev-image">
-                  <i aria-hidden="true" class="fa fa-arrow-circle-left"></i>
-              </span>
-              <p class="sr-only">Previous</p>
-          </div>
-          <div role="button" class="controls controls-right">
-              <span class="img next-image">
-                  <i aria-hidden="true" class="fa fa-arrow-circle-right"></i>
-              </span>
-              <p class="sr-only">Next</p>
-          </div>
-          <div class="caroussel-title">
-              <h2>Item 3</h2>
-          </div>
-        </li>
-      </ul>
+    <div id="lightbox-modal" class="main-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+			<div class="modal lightbox-modal">
+        <div id="previous-img" class="arrows" role="button" aria-label="Previous image" aria-hidden="true"></div>
+        <div id="next-img" class="arrows" role="button" aria-label="Next image" aria-hidden="true"></div>
+        <img id="lightbox-close" src="/src/assets/icons/close-red.svg" class="close" aria-label="Close Contact form" alt="Close Contact form">
+        <div id="lightbox"></div>
+      </div>
     </div>
-    <!-- <script src="/scripts/utils/contactForm.js"></script> -->
+
+
   </body>
 </html>

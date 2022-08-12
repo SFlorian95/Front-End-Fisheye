@@ -30,6 +30,7 @@ module.exports = {
 
       const img = document.createElement('img')
       img.setAttribute('src', picture)
+      img.setAttribute('alt', `Portrait de ${name}`)
 
       const h2 = document.createElement('h2')
       h2.textContent = name
@@ -53,6 +54,7 @@ module.exports = {
 
       const img = document.createElement('img')
       img.setAttribute('src', picture)
+      img.setAttribute('alt', `Portrait de ${name}`)
 
       const h2 = document.createElement('h2')
       h2.textContent = name
@@ -83,5 +85,4 @@ module.exports = {
 
     return { name, picture, getUserCardDOM, getPhotographerProfile }
   }
-
 }

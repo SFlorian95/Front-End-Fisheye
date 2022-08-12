@@ -1,89 +1,5 @@
 @import "./variables.scss";
-
-#contact_modal {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    z-index: 1;
-    background-color: $greyOpacity;
-    padding-top: 100px;
-    padding-bottom: 100px;
-
-    .modal {
-        border-radius: 5px;
-        background-color: $orangeBis;
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        padding: 35px;
-        margin: auto;
-
-        header {
-            width: 100%;
-            position: relative;
-
-            img {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                cursor: pointer;
-            }
-
-            h1 {
-                font-size: 64px;
-                font-weight: 400;
-                line-height: 83px;
-                color: $black;
-                margin-top: 0;
-                margin-bottom: 10px;
-            }
-        }
-
-        form {
-            display: flex;
-            width: 100%;
-            flex-direction: column;
-            align-items: flex-start;
-
-            div {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                align-items: self-start;
-                margin-bottom: 26px;
-
-                label {
-                    color: $blackLight;
-                    font-size: 36px;
-                    font-weight: 400;
-                    line-height: 47px;
-                }
-            }
-
-            input {
-                width: 100%;
-                height: 68px;
-                border: none;
-                border-radius: 5px;
-            }
-
-            textarea {
-                width: 100%;
-                height: 170px;
-                border: none;
-                border-radius: 5px;
-            }
-
-        }
-        
-    }
-}
+@import "./modal.scss";
 
 .photograph-header {
     background-color: #FAFAFA;
@@ -129,12 +45,78 @@
     cursor: pointer;
 }
 
+.sort {
+    margin: 0 100px;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  
+    > label {
+      width: 50%;
+      font-size: 1.1rem;
+      font-weight: 900;
+      margin-left: 40px;
+    }
+    > select {
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: white;
+      padding: 10px;
+      width: 100px;
+      height: 40px;
+      border: none;
+      background-color: $red;
+      border-radius: 5px;
+      cursor: pointer;
+      appearance: none;
+      border: none;
+    }
+}
+
 
 section#medias {
     margin: 100px 100px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    .price {
+        font-size: 24px;
+        color: $black;
+        line-height: 31px;
+        font-weight: 500;
+        text-align: center;
+        position: fixed;
+        background-color: $orangeBis;
+        width: 376px;
+        height: 89px;
+        border-radius: 5px;
+        bottom: 0;
+        right: 20px;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    
+        div {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            padding-right: 40px;
+    
+            .total-likes {
+                font-weight: 500;
+                padding-right: 10px;
+            }
+            img {
+                height: 24px;
+                width: 24px;
+                position: static;
+            }
+        }
+    }
 
     a {
         display: flex;
@@ -185,8 +167,4 @@ section#medias {
             }
         }
     }
-}
-
-div#lightbox {
-    display: none;
 }
