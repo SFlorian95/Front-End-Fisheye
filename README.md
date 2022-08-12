@@ -29,3 +29,6 @@ en ligne de commande, installer globalement avec npm:
 Au préalable le projet doit être en cours d'éxécution, puis en ligne de commande lancer les commandes suivantes:
 - test de la page d'accueil: `pa11y http://localhost:8087/index.html` 
 - test de la page du premier photographe: `pa11y http://localhost:8087/photographer.html?id=243`
+
+Pour lancer le test eslint :
+npm run lint
