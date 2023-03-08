@@ -1,4 +1,15 @@
-# Base de code du projet P6 - Parcours Front-end
+# Fisheye
+
+Projet de formation Openclassrooms
+
+Créez un site accessible pour une plateforme de photographes
+
+![image](https://user-images.githubusercontent.com/48679043/223749001-c875cfbc-7d94-47bc-886e-8eacc9ce67e3.png)
+
+### Scénario 
+
+Depuis quelques semaines, vous êtes développeur junior chez Techasite, une société de conseil spécialisée dans le développement de sites web et d'applications mobiles.
+Avec votre cheffe de projet Amanda et le Designer UI, vous venez de faire une réunion de lancement du projet avec un nouveau client, FishEye. FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux. Ils ont récemment levé des fonds et aimeraient mettre à jour leur site web. 
 
 ## Installer Webpack
 
